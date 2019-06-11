@@ -2,7 +2,12 @@ const { gql } = require('apollo-server');
 
 const typeDefs = gql`
 type Query {
-    getAvailabilities: [RoomCategory]!
+    getAvailabilities(
+        adult: Int,
+        child: Int, 
+        start: String, 
+        end: String
+    ): [RoomCategory]!
     getRooms: [Room]!
     getRoom(id: ID!): Room
     getWeather: [Weather]
